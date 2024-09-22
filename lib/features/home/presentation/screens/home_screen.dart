@@ -188,6 +188,7 @@ import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
+import 'package:parkpal/features/home/presentation/widgets/custom_draggable_sheet.dart';
 
 import '../../../../core/constants/icons_manager.dart';
 import '../../../../core/utils/static_data.dart';
@@ -244,31 +245,36 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) => Scaffold(
         body: currentPosition == null
             ? const Center(child: CircularProgressIndicator())
-            : GoogleMap(
-                initialCameraPosition: _kGooglePlex,
-                mapType: MapType.normal,
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
-                },
-                markers: {
-                  ...StaticData.parkingData.map(
-                    (e) => Marker(
-                        markerId: MarkerId(e.latlng.toString()),
-                        icon: markerIcon,
-                        onTap: () {
-                          print("setting");
-                          showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  content: Text(e.parkingSpot!),
-                                );
-                              });
-                        },
-                        position: e.latlng!),
-                  )
-                },
-                polylines: Set<Polyline>.of(polylines.values),
+            : Stack(
+                children: [
+                  GoogleMap(
+                    initialCameraPosition: _kGooglePlex,
+                    mapType: MapType.normal,
+                    onMapCreated: (GoogleMapController controller) {
+                      _controller.complete(controller);
+                    },
+                    markers: {
+                      ...StaticData.parkingData.map(
+                        (e) => Marker(
+                            markerId: MarkerId(e.latlng.toString()),
+                            icon: markerIcon,
+                            onTap: () {
+                              print("setting");
+                              showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      content: Text(e.parkingSpot!),
+                                    );
+                                  });
+                            },
+                            position: e.latlng!),
+                      )
+                    },
+                    polylines: Set<Polyline>.of(polylines.values),
+                  ),
+                  const CustomDraggableSheet()
+                ],
               ),
       );
 
@@ -284,7 +290,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     permissionGranted = await locationController.hasPermission();
-    if (permissionGranted == PermissionStatus.denied) {
+    if (permissionGranted == PermissionStatus.denied ) {
       permissionGranted = await locationController.requestPermission();
       if (permissionGranted != PermissionStatus.granted) {
         return;
@@ -299,6 +305,11 @@ class _HomeScreenState extends State<HomeScreen> {
           locationData!.longitude!,
         );
       });
+    } else {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text("Error while fetching user location.")));
+      }
     }
 
     locationController.onLocationChanged.listen((currentLocation) {

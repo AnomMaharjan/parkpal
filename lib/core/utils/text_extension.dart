@@ -18,7 +18,7 @@ extension TextExtension on Text {
       data!,
       style: TextStyle(
           color: color ?? Colors.black,
-          fontSize: 16.sp,
+          fontSize: 14.sp,
           fontFamily: "Space Grotesk",
           fontWeight: fontWeight),
     );
@@ -29,7 +29,7 @@ extension TextExtension on Text {
       data!,
       style: TextStyle(
           color: color ?? Colors.black,
-          fontSize: 20.sp,
+          fontSize: 16.sp,
           fontFamily: "Space Grotesk",
           fontWeight: fontWeight),
     );

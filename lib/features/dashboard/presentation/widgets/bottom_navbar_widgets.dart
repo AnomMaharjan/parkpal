@@ -20,14 +20,14 @@ List<Widget> screens = [
 List<BottomNavigationBarItem> bottomNavItems = [
   BottomNavigationBarItem(
     icon: Container(
-      width: 60,
+      width: 70,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(right: 8, left: 8, top: 12, bottom: 8),
       child: Column(
         children: [
           SvgPicture.asset(
             IconsManager.booking,
-            height: 24.h,
+            height: 18.h,
             colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
           SizedBox(
@@ -38,7 +38,7 @@ List<BottomNavigationBarItem> bottomNavItems = [
       ),
     ),
     activeIcon: Container(
-      width: 60,
+      width: 70,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(right: 8, left: 8, top: 12, bottom: 8),
       decoration: BoxDecoration(
@@ -49,7 +49,7 @@ List<BottomNavigationBarItem> bottomNavItems = [
         children: [
           SvgPicture.asset(
             IconsManager.booking,
-            height: 24.h,
+            height: 18.h,
             colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
           SizedBox(
@@ -63,14 +63,14 @@ List<BottomNavigationBarItem> bottomNavItems = [
   ),
   BottomNavigationBarItem(
     icon: Container(
-      width: 60,
+      width: 70,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(right: 8, left: 8, top: 12, bottom: 8),
       child: Column(
         children: [
           SvgPicture.asset(
             IconsManager.qr,
-            height: 24.h,
+            height: 18.h,
             colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
           SizedBox(
@@ -81,7 +81,7 @@ List<BottomNavigationBarItem> bottomNavItems = [
       ),
     ),
     activeIcon: Container(
-      width: 60,
+      width: 70,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(right: 8, left: 8, top: 12, bottom: 8),
       decoration: BoxDecoration(
@@ -92,7 +92,7 @@ List<BottomNavigationBarItem> bottomNavItems = [
         children: [
           SvgPicture.asset(
             IconsManager.qr,
-            height: 24.h,
+            height: 18.h,
             colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
           SizedBox(
@@ -106,14 +106,14 @@ List<BottomNavigationBarItem> bottomNavItems = [
   ),
   BottomNavigationBarItem(
     icon: Container(
-      width: 60,
+      width: 70,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(right: 8, left: 8, top: 12, bottom: 8),
       child: Column(
         children: [
           SvgPicture.asset(
             IconsManager.home,
-            height: 24.h,
+            height: 18.h,
             colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
           SizedBox(
@@ -124,7 +124,7 @@ List<BottomNavigationBarItem> bottomNavItems = [
       ),
     ),
     activeIcon: Container(
-      width: 60,
+      width: 70,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(right: 8, left: 8, top: 12, bottom: 8),
       decoration: BoxDecoration(
@@ -135,7 +135,7 @@ List<BottomNavigationBarItem> bottomNavItems = [
         children: [
           SvgPicture.asset(
             IconsManager.home,
-            height: 24.h,
+            height: 18.h,
             colorFilter: const ColorFilter.mode(
               Colors.black,
               BlendMode.srcIn,
@@ -152,14 +152,14 @@ List<BottomNavigationBarItem> bottomNavItems = [
   ),
   BottomNavigationBarItem(
     icon: Container(
-      width: 60,
+      width: 70,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(right: 8, left: 8, top: 12, bottom: 8),
       child: Column(
         children: [
           SvgPicture.asset(
             IconsManager.profile,
-            height: 24.h,
+            height: 18.h,
             colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
           SizedBox(
@@ -170,7 +170,7 @@ List<BottomNavigationBarItem> bottomNavItems = [
       ),
     ),
     activeIcon: Container(
-      width: 60,
+      width: 70,
       margin: EdgeInsets.zero,
       padding: const EdgeInsets.only(right: 8, left: 8, top: 12, bottom: 8),
       decoration: BoxDecoration(
@@ -181,7 +181,7 @@ List<BottomNavigationBarItem> bottomNavItems = [
         children: [
           SvgPicture.asset(
             IconsManager.profile,
-            height: 24.h,
+            height: 18.h,
             colorFilter: const ColorFilter.mode(Colors.black, BlendMode.srcIn),
           ),
           SizedBox(

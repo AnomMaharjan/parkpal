@@ -8,12 +8,14 @@ class SharedPreferencesManager {
   static const String keyUsername = 'username';
   static const String keyPhoneNumber = 'phonenumber';
   static const String firstTime = "firstTime";
+  static const String ongoingBooking = "ongoingBooking";
+
   static Future<SharedPreferencesManager> getInstance() async {
     _instance = SharedPreferencesManager();
 
     _sharedPreferences = await SharedPreferences.getInstance();
 
-    return _instance; 
+    return _instance;
   }
 
   Future<bool> setfirstTime() {
@@ -27,7 +29,8 @@ class SharedPreferencesManager {
   Future<bool> putBool(String key, bool value) =>
       _sharedPreferences.setBool(key, value);
 
-  Future<bool> setBool(String key, bool value) => _sharedPreferences.setBool(key, value);
+  Future<bool> setBool(String key, bool value) =>
+      _sharedPreferences.setBool(key, value);
 
   bool? getBool(String key) => _sharedPreferences.getBool(key);
 
@@ -36,7 +39,8 @@ class SharedPreferencesManager {
 
   double getDouble(String key) => _sharedPreferences.getDouble(key)!;
 
-  Future<bool> setString(String key, String value) => _sharedPreferences.setString(key, value);
+  Future<bool> setString(String key, String value) =>
+      _sharedPreferences.setString(key, value);
 
   Future<bool> putInt(String key, int value) =>
       _sharedPreferences.setInt(key, value);
